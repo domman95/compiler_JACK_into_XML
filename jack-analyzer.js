@@ -34,12 +34,6 @@ function JackTokenizer(fileName) {
             line = line.substr(0, line.indexOf('/**'));
         }
 
-        // if (line.startsWith(/\*/g)) {
-        // line = line.substr(0, line.indexOf('*'));
-        // }
-
-        console.log(line);
-
         // Ignore empty string lines
         if (line.length > 0) {
             line = line.split(
@@ -421,7 +415,6 @@ function writeXMLFile(str) {
     const fileName = myArgs[0];
     const outputFileName =
         fileName.substr(0, fileName.lastIndexOf('.')) + '_solution.xml';
-    // const outputfile = array.join('\n');
     console.log(outputFileName);
     fs.writeFile(`${outputFileName}`, str, (err) => {
         if (err) throw err;
